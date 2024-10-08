@@ -69,8 +69,8 @@ This guide is only tested on macOS, it should work on Linux. Windows may require
 2. Move into that folder (`cd my_lambda_deployment`).
 3. Create a folder called `lambda`.
 4. Move into that folder (`cd lambda`).
-5. Create a file called `lambda_function.py` and paste in the code for the lambda `pixelator` function .
-6. Download this file ([https://files.pythonhosted.org/packages/f3/3b/d7bb231b3bc1414252e77463dc63554c1aeccffe0798524467aca7bad089/Pillow-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl](https://files.pythonhosted.org/packages/f3/3b/d7bb231b3bc1414252e77463dc63554c1aeccffe0798524467aca7bad089/Pillow-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl)) into that folder.
+5. Create a file called `lambda_function.py` and paste in the code for the `pixelator` [Lambda function](https://github.com/deeepak-tyagii/pixelator-aws-s3-lambda-events/blob/053f2770d13142ec88b8b1dd8d567c7c3183edbd/lab-setup-files/lambda/lambda_function.py) .
+6. Download this file [PIL Package](https://files.pythonhosted.org/packages/f3/3b/d7bb231b3bc1414252e77463dc63554c1aeccffe0798524467aca7bad089/Pillow-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl) into that folder.
 7. Run `unzip Pillow-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl` and then `rm Pillow-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl`.  These are the Pillow module files required for image manipulation in Python 3.9 (which the lambda function will be using).
 8. From the same folder, run `zip -r ../my-deployment-package.zip .` which will create a lambda function zip, containing all these files in the parent directory.
 
@@ -78,7 +78,7 @@ This zip will be the same zip which is linked below, so if you have any issues w
 
 # Stage 3 - Create the Lambda Function
 
-1. Move to the lambda console ([https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)).
+1. Move to the [lambda console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions).
 2. Click `Create Function`.
 3. We're going to be `Authoring from Scratch`.
 4. For `Function name` enter `pixelator`.
@@ -88,7 +88,7 @@ This zip will be the same zip which is linked below, so if you have any issues w
 8. Then `Create Function`  
 9. Close down any `notifcation` dialogues/popups  
 10. Click `Upload from` and select `.zip file`
-11. Either 1, download this zip to your local machine (https://github.com/acantril/learn-cantrill-io-labs/blob/master/00-aws-simple-demos/aws-lambda-s3-events/01_LABSETUP/my-deployment-package.zip, click Download)  
+11. Either 1, download this zip to your local machine [Zip-File](https://github.com/deeepak-tyagii/pixelator-aws-s3-lambda-events/blob/053f2770d13142ec88b8b1dd8d567c7c3183edbd/lab-setup-files/my-deployment-package.zip), click Download.
 or 2, locate the .zip you created yourself in the `Stage 3(pre)` above - they will be identical  
 12. On the lambda screen, click `Upload` locate and select that .zip, and then click the `Save` button  
 13. This upload will take a few minutes, but once complete you might see something saying `The deployment package of your Lambda function "pixelator" is too large to enable inline code editing. However, you can still invoke your function.` which is OK :)  
@@ -118,8 +118,8 @@ or 2, locate the .zip you created yourself in the `Stage 3(pre)` above - they wi
 
 **Open Multiple Tabs**
 
-1. Open a tab to the CloudWatch Logs console: [https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups)
-2. Open two tabs to the S3 console: [https://s3.console.aws.amazon.com/s3/home?region=us-east-1](https://s3.console.aws.amazon.com/s3/home?region=us-east-1)
+1. Open a tab to the [CloudWatch Logs console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups)
+2. Open two tabs to the [S3 console](https://s3.console.aws.amazon.com/s3/home?region=us-east-1)
 
 **Upload Test Images**
 
@@ -144,18 +144,18 @@ or 2, locate the .zip you created yourself in the `Stage 3(pre)` above - they wi
 
 **1. Delete Lambda Function:**
 
-* Open the `pixelator` lambda function: [https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/pixelator?tab=code](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/pixelator?tab=code)
+* Open the `pixelator` [lambda function](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/pixelator?tab=code)
 * Click "Delete" to remove the function.
 
 **2. Delete IAM Role:**
 
-* Move to the IAM Roles console: [https://console.aws.amazon.com/iamv2/home#/roles](https://console.aws.amazon.com/iamv2/home#/roles)
+* Move to the [IAM Roles console](https://console.aws.amazon.com/iamv2/home#/roles)
 * Click on "PixelatorRole".
 * Click "Delete" and confirm the deletion of the role.
 
 **3. Empty and Delete S3 Buckets:**
 
-* Go to the S3 Console: [https://s3.console.aws.amazon.com/s3/home?region=us-east-1&region=us-east-1](https://s3.console.aws.amazon.com/s3/home?region=us-east-1&region=us-east-1)
+* Go to the [S3 Console](https://s3.console.aws.amazon.com/s3/home?region=us-east-1&region=us-east-1)
 
 **For each bucket (source and processed):**
 
