@@ -1,6 +1,24 @@
+<h3 align="center">Connect with me:</h3>
+<p align="center">
+<div> 
+  <p align="center">
+    <a href="https://www.linkedin.com/in/deepaktyagi048/"><img title="https://www.linkedin.com/in/deepaktyagi048/" src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+    </a>
+	<a href="https://www.instagram.com/deeepak.tyagi/"><img title="instagram.com/deeepak.tyagi" src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white">
+    </a>
+   <a href="https://www.facebook.com/iamdeepsz"><img title="facebook.com/iamdeepz" src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white">
+    </a>
+   <a href="https://medium.com/@deepak-tyagi" target="_blank">
+<img src=https://img.shields.io/badge/medium-%23292929.svg?&style=for-the-badge&logo=medium&logoColor=white alt=medium style="margin-bottom: 5px;" />
+</a> 
+  </p>
+</div>
+</p>
+
 # pixelator-aws-s3-lambda-events
 An event-driven image processing pipeline using AWS Lambda and S3. When images are uploaded to a source S3 bucket, Lambda triggers and pixelates the images in five variations (8x8, 16x16, 32x32, 48x48, 64x64) using the PIL library, then stores them in a processed S3 bucket.
 
+![Architecture Diagram](pixelator2.gif)
 ---
 
 ## Stage 1: Create the S3 Buckets
